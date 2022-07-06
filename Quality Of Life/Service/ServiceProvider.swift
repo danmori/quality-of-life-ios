@@ -8,20 +8,24 @@
 import Foundation
 
 protocol ServiceProvider {
-    
+    func getMostPopulatedCities(completion: @escaping((Result<MostPopulatedCitiesResponse, APIError>) -> Void))
 }
 
 class ServiceAPI: ServiceProvider {
     private let baseURL = "https://api.teleport.org/api/"
     
     private enum Endpoint: String {
-        case qualityOfLife = ""
+        case mostPopulatedCities = "/cities/"
     }
     
     private enum Method: String {
         case GET
         case POST
         case DELETE
+    }
+    
+    func getMostPopulatedCities(completion: @escaping ((Result<MostPopulatedCitiesResponse, APIError>) -> Void)) {
+        request(withEndpoint: .mostPopulatedCities, method: .GET, completion: completion)
     }
     
     private func request<T: Codable>(withEndpoint endpoint: Endpoint, method: Method, completion: @escaping ((Result<T, APIError>) -> Void)) {
