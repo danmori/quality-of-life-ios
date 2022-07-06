@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		F1D74672287501CA0055DA7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74671287501CA0055DA7B /* AppDelegate.swift */; };
 		F1D74674287501CA0055DA7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74673287501CA0055DA7B /* SceneDelegate.swift */; };
-		F1D74676287501CA0055DA7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74675287501CA0055DA7B /* ViewController.swift */; };
 		F1D7467B287501CC0055DA7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D7467A287501CC0055DA7B /* Assets.xcassets */; };
 		F1D7467E287501CC0055DA7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D7467C287501CC0055DA7B /* LaunchScreen.storyboard */; };
 		F1D74689287501CC0055DA7B /* Quality_Of_LifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74688287501CC0055DA7B /* Quality_Of_LifeTests.swift */; };
 		F1D74693287501CC0055DA7B /* Quality_Of_LifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74692287501CC0055DA7B /* Quality_Of_LifeUITests.swift */; };
 		F1D74695287501CC0055DA7B /* Quality_Of_LifeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74694287501CC0055DA7B /* Quality_Of_LifeUITestsLaunchTests.swift */; };
+		F1D746A3287503F00055DA7B /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746A2287503F00055DA7B /* ServiceProvider.swift */; };
+		F1D746A7287504360055DA7B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746A6287504360055DA7B /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 		F1D7466E287501CA0055DA7B /* Quality Of Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quality Of Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D74671287501CA0055DA7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D74673287501CA0055DA7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F1D74675287501CA0055DA7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F1D7467A287501CC0055DA7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1D7467D287501CC0055DA7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1D7467F287501CC0055DA7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		F1D7468E287501CC0055DA7B /* Quality Of LifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quality Of LifeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D74692287501CC0055DA7B /* Quality_Of_LifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quality_Of_LifeUITests.swift; sourceTree = "<group>"; };
 		F1D74694287501CC0055DA7B /* Quality_Of_LifeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quality_Of_LifeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F1D746A2287503F00055DA7B /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		F1D746A6287504360055DA7B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +99,9 @@
 		F1D74670287501CA0055DA7B /* Quality Of Life */ = {
 			isa = PBXGroup;
 			children = (
+				F1D746A1287503E00055DA7B /* Service */,
 				F1D74671287501CA0055DA7B /* AppDelegate.swift */,
 				F1D74673287501CA0055DA7B /* SceneDelegate.swift */,
-				F1D74675287501CA0055DA7B /* ViewController.swift */,
 				F1D7467A287501CC0055DA7B /* Assets.xcassets */,
 				F1D7467C287501CC0055DA7B /* LaunchScreen.storyboard */,
 				F1D7467F287501CC0055DA7B /* Info.plist */,
@@ -122,6 +124,15 @@
 				F1D74694287501CC0055DA7B /* Quality_Of_LifeUITestsLaunchTests.swift */,
 			);
 			path = "Quality Of LifeUITests";
+			sourceTree = "<group>";
+		};
+		F1D746A1287503E00055DA7B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F1D746A6287504360055DA7B /* APIError.swift */,
+				F1D746A2287503F00055DA7B /* ServiceProvider.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1D74676287501CA0055DA7B /* ViewController.swift in Sources */,
+				F1D746A3287503F00055DA7B /* ServiceProvider.swift in Sources */,
 				F1D74672287501CA0055DA7B /* AppDelegate.swift in Sources */,
 				F1D74674287501CA0055DA7B /* SceneDelegate.swift in Sources */,
+				F1D746A7287504360055DA7B /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
