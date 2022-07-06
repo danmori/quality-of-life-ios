@@ -10,7 +10,7 @@ import Foundation
 // MARK: - MostPopulatedCitiesResponse
 struct MostPopulatedCitiesResponse: Codable {
     let embedded: Embedded
-
+    
     enum CodingKeys: String, CodingKey {
         case embedded = "_embedded"
     }

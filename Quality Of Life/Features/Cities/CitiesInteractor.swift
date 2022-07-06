@@ -24,9 +24,14 @@ class CitiesInteractor: CitiesBusinessLogic, CitiesDataStore {
     var presenter: CitiesPresentationLogic?
     var worker: CitiesWorker?
     var cities: [CityItem] = []
+    var service: ServiceProvider?
+    
+    init(withServiceProvider service: ServiceProvider) {
+        self.service = service
+    }
     
     func getCities(request: Cities.GetCities.Request) {
-        ServiceAPI().getMostPopulatedCities {
+        service?.getMostPopulatedCities {
             switch $0 {
             case .failure(_):
                 print("falhou")

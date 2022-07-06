@@ -20,7 +20,8 @@ class CitiesViewController: UIViewController, CitiesDisplayLogic {
     var interactor: CitiesBusinessLogic?
     var router: (NSObjectProtocol & CitiesRoutingLogic & CitiesDataPassing)?
     lazy var contentView = CitiesView()
-    private var cities: [City] = []
+    var cities: [City] = []
+    lazy var service = ServiceAPI()
 
     // MARK: Object lifecycle
   
@@ -37,7 +38,7 @@ class CitiesViewController: UIViewController, CitiesDisplayLogic {
     // MARK: Setup
     private func setup() {
         let viewController = self
-        let interactor = CitiesInteractor()
+        let interactor = CitiesInteractor(withServiceProvider: service)
         let presenter = CitiesPresenter()
         let router = CitiesRouter()
         viewController.interactor = interactor
@@ -46,6 +47,7 @@ class CitiesViewController: UIViewController, CitiesDisplayLogic {
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
+        self.title = "Cities"
         setupTableView()
     }
     
@@ -91,6 +93,11 @@ class CitiesViewController: UIViewController, CitiesDisplayLogic {
 extension CitiesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        print(cities[indexPath.row].name)
     }
 }
 

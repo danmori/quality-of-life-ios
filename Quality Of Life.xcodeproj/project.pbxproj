@@ -23,6 +23,10 @@
 		F1D746B8287510000055DA7B /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746B2287510000055DA7B /* CitiesViewController.swift */; };
 		F1D746B9287510000055DA7B /* CitiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746B3287510000055DA7B /* CitiesInteractor.swift */; };
 		F1D746BB287510250055DA7B /* CitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746BA287510250055DA7B /* CitiesView.swift */; };
+		F1F326C1287647AD00464152 /* CitiesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F326BD287647AD00464152 /* CitiesViewControllerTests.swift */; };
+		F1F326C2287647AD00464152 /* CitiesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F326BE287647AD00464152 /* CitiesInteractorTests.swift */; };
+		F1F326C4287647AD00464152 /* CitiesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F326C0287647AD00464152 /* CitiesPresenterTests.swift */; };
+		F1F326C728764DDC00464152 /* TestServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F326C628764DDC00464152 /* TestServiceAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		F1D746B2287510000055DA7B /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		F1D746B3287510000055DA7B /* CitiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesInteractor.swift; sourceTree = "<group>"; };
 		F1D746BA287510250055DA7B /* CitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesView.swift; sourceTree = "<group>"; };
+		F1F326BD287647AD00464152 /* CitiesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewControllerTests.swift; sourceTree = "<group>"; };
+		F1F326BE287647AD00464152 /* CitiesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesInteractorTests.swift; sourceTree = "<group>"; };
+		F1F326C0287647AD00464152 /* CitiesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesPresenterTests.swift; sourceTree = "<group>"; };
+		F1F326C628764DDC00464152 /* TestServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestServiceAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,8 @@
 		F1D74687287501CC0055DA7B /* Quality Of LifeTests */ = {
 			isa = PBXGroup;
 			children = (
+				F1F326C628764DDC00464152 /* TestServiceAPI.swift */,
+				F1F326BC287647A100464152 /* Cities */,
 			);
 			path = "Quality Of LifeTests";
 			sourceTree = "<group>";
@@ -176,8 +186,26 @@
 			isa = PBXGroup;
 			children = (
 				F1D746AC28750FC60055DA7B /* Cities */,
+				F1F326C5287648E200464152 /* City Details */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		F1F326BC287647A100464152 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				F1F326BD287647AD00464152 /* CitiesViewControllerTests.swift */,
+				F1F326BE287647AD00464152 /* CitiesInteractorTests.swift */,
+				F1F326C0287647AD00464152 /* CitiesPresenterTests.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		F1F326C5287648E200464152 /* City Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "City Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +357,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F326C1287647AD00464152 /* CitiesViewControllerTests.swift in Sources */,
+				F1F326C4287647AD00464152 /* CitiesPresenterTests.swift in Sources */,
+				F1F326C728764DDC00464152 /* TestServiceAPI.swift in Sources */,
+				F1F326C2287647AD00464152 /* CitiesInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

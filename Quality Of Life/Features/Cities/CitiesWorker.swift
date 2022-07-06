@@ -12,9 +12,4 @@
 
 import UIKit
 
-class CitiesWorker
-{
-  func doSomeWork()
-  {
-  }
-}
+class CitiesWorker {}
