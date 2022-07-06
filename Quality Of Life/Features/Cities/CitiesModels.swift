@@ -12,10 +12,7 @@
 
 import UIKit
 
-enum Cities
-{
-  // MARK: Use cases
-  
+enum Cities {
   enum Something
   {
     struct Request
@@ -28,4 +25,13 @@ enum Cities
     {
     }
   }
+    enum GetCities {
+        struct Request {}
+        struct Response {
+            let cities: [City]
+        }
+        struct ViewModel {
+            let cities: [City]
+        }
+    }
 }

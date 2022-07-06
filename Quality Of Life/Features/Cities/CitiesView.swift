@@ -8,13 +8,29 @@
 import UIKit
 
 class CitiesView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    lazy var tableView = UITableView()
+    
+    init() {
+        super.init(frame: .zero)
+        backgroundColor = .blue
+        setupView()
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+    }
+    
+    private func setupView() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CityReuseIdentifider")
+        addSubview(tableView)
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+    }
+    
 }

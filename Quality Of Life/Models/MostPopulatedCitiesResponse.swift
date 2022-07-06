@@ -49,3 +49,14 @@ struct CitySearchResultLinks: Codable {
 struct CityItem: Codable {
     let href: String
 }
+
+struct City: Codable {
+    let name: String
+    let geonameId: String
+}
+
+extension MostPopulatedCitiesResponse {
+    var cities : [City] {
+        return embedded.citySearchResults.map { return City(name: $0.matchingFullName, geonameId: $0.links.cityItem.href.split(separator: ":").last?.replacingOccurrences(of: "/", with: "") ?? "")}
+    }
+}

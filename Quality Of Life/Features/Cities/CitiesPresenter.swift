@@ -12,20 +12,14 @@
 
 import UIKit
 
-protocol CitiesPresentationLogic
-{
-  func presentSomething(response: Cities.Something.Response)
+protocol CitiesPresentationLogic {
+    func presentCities(response: Cities.GetCities.Response)
 }
 
-class CitiesPresenter: CitiesPresentationLogic
-{
-  weak var viewController: CitiesDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Cities.Something.Response)
-  {
-    let viewModel = Cities.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+class CitiesPresenter: CitiesPresentationLogic {
+    weak var viewController: CitiesDisplayLogic?
+
+    func presentCities(response: Cities.GetCities.Response) {
+        viewController?.displayCities(viewModel: Cities.GetCities.ViewModel(cities: response.cities))
+    }
 }

@@ -13,12 +13,14 @@
 import UIKit
 
 protocol CitiesDisplayLogic: AnyObject {
-    func displaySomething(viewModel: Cities.Something.ViewModel)
+    func displayCities(viewModel: Cities.GetCities.ViewModel)
 }
 
 class CitiesViewController: UIViewController, CitiesDisplayLogic {
     var interactor: CitiesBusinessLogic?
     var router: (NSObjectProtocol & CitiesRoutingLogic & CitiesDataPassing)?
+    lazy var contentView = CitiesView()
+    private var cities: [City] = []
 
     // MARK: Object lifecycle
   
@@ -44,6 +46,12 @@ class CitiesViewController: UIViewController, CitiesDisplayLogic {
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        contentView.tableView.delegate = self
+        contentView.tableView.dataSource = self
     }
     
     // MARK: Routing
@@ -60,24 +68,47 @@ class CitiesViewController: UIViewController, CitiesDisplayLogic {
   // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        ServiceAPI().getMostPopulatedCities(completion: { response in
-            print(response)
-        })
-        doSomething()
+        getCities()
     }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = Cities.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: Cities.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    
+    override func loadView() {
+        super.loadView()
+        view = contentView
+    }
+      
+    func getCities() {
+        interactor?.getCities(request: Cities.GetCities.Request())
+    }
+    
+    func displayCities(viewModel: Cities.GetCities.ViewModel) {
+        self.cities = viewModel.cities
+        DispatchQueue.main.async {
+            self.contentView.tableView.reloadData()
+        }
+    }
+}
+
+extension CitiesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+}
+
+extension CitiesViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cities.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CityReuseIdentifider", for: indexPath)
+        cell.textLabel?.text = cities[indexPath.row].name
+        return cell
+    }
+    
+    
 }

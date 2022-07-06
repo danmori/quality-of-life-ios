@@ -12,30 +12,28 @@
 
 import UIKit
 
-protocol CitiesBusinessLogic
-{
-  func doSomething(request: Cities.Something.Request)
+protocol CitiesBusinessLogic {
+    func getCities(request: Cities.GetCities.Request)
 }
 
-protocol CitiesDataStore
-{
-  //var name: String { get set }
+protocol CitiesDataStore {
+    var cities: [CityItem] { get set }
 }
 
-class CitiesInteractor: CitiesBusinessLogic, CitiesDataStore
-{
-  var presenter: CitiesPresentationLogic?
-  var worker: CitiesWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Cities.Something.Request)
-  {
-    worker = CitiesWorker()
-    worker?.doSomeWork()
+class CitiesInteractor: CitiesBusinessLogic, CitiesDataStore {
+    var presenter: CitiesPresentationLogic?
+    var worker: CitiesWorker?
+    var cities: [CityItem] = []
     
-    let response = Cities.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    func getCities(request: Cities.GetCities.Request) {
+        ServiceAPI().getMostPopulatedCities {
+            switch $0 {
+            case .failure(_):
+                print("falhou")
+            case let .success(citiesResponse):
+                let response = Cities.GetCities.Response(cities: citiesResponse.cities)
+                self.presenter?.presentCities(response: response)
+            }
+        }
+    }
 }
