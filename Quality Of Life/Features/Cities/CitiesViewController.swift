@@ -95,7 +95,6 @@ extension CitiesViewController: UITableViewDelegate {
 }
 
 extension CitiesViewController: UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -109,6 +108,4 @@ extension CitiesViewController: UITableViewDataSource {
         cell.textLabel?.text = cities[indexPath.row].name
         return cell
     }
-    
-    
 }

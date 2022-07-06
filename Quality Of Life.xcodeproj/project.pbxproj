@@ -11,7 +11,6 @@
 		F1D74674287501CA0055DA7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74673287501CA0055DA7B /* SceneDelegate.swift */; };
 		F1D7467B287501CC0055DA7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D7467A287501CC0055DA7B /* Assets.xcassets */; };
 		F1D7467E287501CC0055DA7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D7467C287501CC0055DA7B /* LaunchScreen.storyboard */; };
-		F1D74689287501CC0055DA7B /* Quality_Of_LifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74688287501CC0055DA7B /* Quality_Of_LifeTests.swift */; };
 		F1D74693287501CC0055DA7B /* Quality_Of_LifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74692287501CC0055DA7B /* Quality_Of_LifeUITests.swift */; };
 		F1D74695287501CC0055DA7B /* Quality_Of_LifeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74694287501CC0055DA7B /* Quality_Of_LifeUITestsLaunchTests.swift */; };
 		F1D746A3287503F00055DA7B /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746A2287503F00055DA7B /* ServiceProvider.swift */; };
@@ -51,7 +50,6 @@
 		F1D7467D287501CC0055DA7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1D7467F287501CC0055DA7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1D74684287501CC0055DA7B /* Quality Of LifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quality Of LifeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1D74688287501CC0055DA7B /* Quality_Of_LifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quality_Of_LifeTests.swift; sourceTree = "<group>"; };
 		F1D7468E287501CC0055DA7B /* Quality Of LifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quality Of LifeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D74692287501CC0055DA7B /* Quality_Of_LifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quality_Of_LifeUITests.swift; sourceTree = "<group>"; };
 		F1D74694287501CC0055DA7B /* Quality_Of_LifeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quality_Of_LifeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 		F1D74687287501CC0055DA7B /* Quality Of LifeTests */ = {
 			isa = PBXGroup;
 			children = (
-				F1D74688287501CC0055DA7B /* Quality_Of_LifeTests.swift */,
 			);
 			path = "Quality Of LifeTests";
 			sourceTree = "<group>";
@@ -332,7 +329,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1D74689287501CC0055DA7B /* Quality_Of_LifeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
