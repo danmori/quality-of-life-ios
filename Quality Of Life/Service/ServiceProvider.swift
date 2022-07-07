@@ -9,13 +9,14 @@ import Foundation
 
 protocol ServiceProvider {
     func getMostPopulatedCities(completion: @escaping((Result<MostPopulatedCitiesResponse, APIError>) -> Void))
+    func getCityDetails(cityId: String, completion: @escaping((Result<CityDetailsResponse, APIError>) -> Void))
 }
 
 class ServiceAPI: ServiceProvider {
     private let baseURL = "https://api.teleport.org/api/"
     
     private enum Endpoint: String {
-        case mostPopulatedCities = "/cities/"
+        case cities = "/cities/"
     }
     
     private enum Method: String {
@@ -25,11 +26,15 @@ class ServiceAPI: ServiceProvider {
     }
     
     func getMostPopulatedCities(completion: @escaping ((Result<MostPopulatedCitiesResponse, APIError>) -> Void)) {
-        request(withEndpoint: .mostPopulatedCities, method: .GET, completion: completion)
+        request(withEndpoint: Endpoint.cities.rawValue, method: .GET, completion: completion)
     }
     
-    private func request<T: Codable>(withEndpoint endpoint: Endpoint, method: Method, completion: @escaping ((Result<T, APIError>) -> Void)) {
-        let path = "\(baseURL)\(endpoint.rawValue)"
+    func getCityDetails(cityId: String, completion: @escaping ((Result<CityDetailsResponse, APIError>) -> Void)) {
+        request(withEndpoint: "\(Endpoint.cities.rawValue)geonameid:\(cityId)", method: .GET, completion: completion)
+    }
+    
+    private func request<T: Codable>(withEndpoint endpoint: String, method: Method, completion: @escaping ((Result<T, APIError>) -> Void)) {
+        let path = "\(baseURL)\(endpoint)"
         guard let url = URL(string: path) else { completion(.failure(.internalError)); return}
         
         var request = URLRequest(url: url)

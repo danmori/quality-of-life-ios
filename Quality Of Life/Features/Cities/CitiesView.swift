@@ -12,7 +12,6 @@ class CitiesView: UIView {
     
     init() {
         super.init(frame: .zero)
-        backgroundColor = .blue
         setupView()
     }
     

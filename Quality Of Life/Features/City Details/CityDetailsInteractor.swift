@@ -12,30 +12,38 @@
 
 import UIKit
 
-protocol CityDetailsBusinessLogic
-{
-  func doSomething(request: CityDetails.Something.Request)
+protocol CityDetailsBusinessLogic {
+    func loadCityDetails(request: CityDetails.LoadCityDetails.Request)
 }
 
-protocol CityDetailsDataStore
-{
-  var cityId: String { get set }
+protocol CityDetailsDataStore {
+    var cityId: String { get set }
+    var cityInformations: CityInformations? { get set }
 }
 
-class CityDetailsInteractor: CityDetailsBusinessLogic, CityDetailsDataStore
-{
-  var presenter: CityDetailsPresentationLogic?
-  var worker: CityDetailsWorker?
-  var cityId: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: CityDetails.Something.Request)
-  {
-    worker = CityDetailsWorker()
-//    worker?.doSomeWork()
+class CityDetailsInteractor: CityDetailsBusinessLogic, CityDetailsDataStore {
+    var presenter: CityDetailsPresentationLogic?
+    var worker: CityDetailsWorker?
+    var cityId: String = ""
+    var service: ServiceProvider?
+    var cityInformations: CityInformations?
     
-    let response = CityDetails.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    init(withServiceProvider service: ServiceProvider) {
+        self.service = service
+    }
+    
+    func loadCityDetails(request: CityDetails.LoadCityDetails.Request) {
+        service?.getCityDetails(cityId: cityId) {
+            switch $0 {
+            case .failure(_):
+                break
+            case let .success(response):
+                self.cityInformations = response.cityInformations
+                guard let cityInformations = self.cityInformations else { return }
+                let r = CityDetails.LoadCityDetails.Response(name: cityInformations.name, fullName: cityInformations.fullName, population: cityInformations.population)
+                self.presenter?.presentCityDetails(response: r)
+                break
+            }
+        }
+    }
 }

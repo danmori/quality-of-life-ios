@@ -12,15 +12,15 @@
 
 import UIKit
 
-protocol CityDetailsDisplayLogic: AnyObject
-{
-  func displaySomething(viewModel: CityDetails.Something.ViewModel)
+protocol CityDetailsDisplayLogic: AnyObject {
+    func displayCityDetails(viewModel: CityDetails.LoadCityDetails.ViewModel)
 }
 
-class CityDetailsViewController: UIViewController, CityDetailsDisplayLogic
-{
-  var interactor: CityDetailsBusinessLogic?
-  var router: (NSObjectProtocol & CityDetailsRoutingLogic & CityDetailsDataPassing)?
+class CityDetailsViewController: UIViewController, CityDetailsDisplayLogic {
+    var interactor: CityDetailsBusinessLogic?
+    var router: (NSObjectProtocol & CityDetailsRoutingLogic & CityDetailsDataPassing)?
+    lazy var service = ServiceAPI()
+    lazy var contentView = CityDetailsView()
 
   // MARK: Object lifecycle
   
@@ -41,7 +41,7 @@ class CityDetailsViewController: UIViewController, CityDetailsDisplayLogic
   private func setup()
   {
     let viewController = self
-    let interactor = CityDetailsInteractor()
+    let interactor = CityDetailsInteractor(withServiceProvider: service)
     let presenter = CityDetailsPresenter()
     let router = CityDetailsRouter()
     viewController.interactor = interactor
@@ -66,24 +66,26 @@ class CityDetailsViewController: UIViewController, CityDetailsDisplayLogic
   
   // MARK: View lifecycle
   
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = CityDetails.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: CityDetails.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadCityDetails()
+    }
+    
+    override func loadView() {
+        super.loadView()
+        view = contentView
+    }
+    
+    func loadCityDetails() {
+        interactor?.loadCityDetails(request: CityDetails.LoadCityDetails.Request())
+    }
+    
+    func displayCityDetails(viewModel: CityDetails.LoadCityDetails.ViewModel) {
+        DispatchQueue.main.async {
+            self.title = viewModel.name
+            self.contentView.cityNameLabel.text = "Nome: \(viewModel.name)"
+            self.contentView.cityFullNameLabel.text = "Nome Completo: \(viewModel.fullName)"
+            self.contentView.populationLabel.text = "População: \(viewModel.population)"
+        }
+    }
 }

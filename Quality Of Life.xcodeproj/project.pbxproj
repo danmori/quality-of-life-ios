@@ -14,6 +14,8 @@
 		F14C5DA028765A4700C1BFB9 /* CityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C5D9A28765A4700C1BFB9 /* CityDetailsViewController.swift */; };
 		F14C5DA128765A4700C1BFB9 /* CityDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C5D9B28765A4700C1BFB9 /* CityDetailsInteractor.swift */; };
 		F14C5DA328765AF600C1BFB9 /* CityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C5DA228765AF600C1BFB9 /* CityDetailsView.swift */; };
+		F14C5DA52876659500C1BFB9 /* CityDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C5DA42876659500C1BFB9 /* CityDetailsResponse.swift */; };
+		F14C5DAA28766D2B00C1BFB9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C5DA928766D2B00C1BFB9 /* Extensions.swift */; };
 		F1D74672287501CA0055DA7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74671287501CA0055DA7B /* AppDelegate.swift */; };
 		F1D74674287501CA0055DA7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74673287501CA0055DA7B /* SceneDelegate.swift */; };
 		F1D7467B287501CC0055DA7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D7467A287501CC0055DA7B /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		F14C5D9A28765A4700C1BFB9 /* CityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewController.swift; sourceTree = "<group>"; };
 		F14C5D9B28765A4700C1BFB9 /* CityDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsInteractor.swift; sourceTree = "<group>"; };
 		F14C5DA228765AF600C1BFB9 /* CityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsView.swift; sourceTree = "<group>"; };
+		F14C5DA42876659500C1BFB9 /* CityDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsResponse.swift; sourceTree = "<group>"; };
+		F14C5DA928766D2B00C1BFB9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F1D7466E287501CA0055DA7B /* Quality Of Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quality Of Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D74671287501CA0055DA7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D74673287501CA0055DA7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F14C5DA828766D2200C1BFB9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F14C5DA928766D2B00C1BFB9 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F1D74665287501CA0055DA7B = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +147,7 @@
 		F1D74670287501CA0055DA7B /* Quality Of Life */ = {
 			isa = PBXGroup;
 			children = (
+				F14C5DA828766D2200C1BFB9 /* Helpers */,
 				F1D746A828750CAF0055DA7B /* Models */,
 				F1D746A1287503E00055DA7B /* Service */,
 				F1D746AD28750FE50055DA7B /* Features */,
@@ -178,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				F1D746A928750CC00055DA7B /* MostPopulatedCitiesResponse.swift */,
+				F14C5DA42876659500C1BFB9 /* CityDetailsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -369,8 +383,10 @@
 				F14C5DA128765A4700C1BFB9 /* CityDetailsInteractor.swift in Sources */,
 				F14C5D9F28765A4700C1BFB9 /* CityDetailsModels.swift in Sources */,
 				F1D74674287501CA0055DA7B /* SceneDelegate.swift in Sources */,
+				F14C5DA52876659500C1BFB9 /* CityDetailsResponse.swift in Sources */,
 				F1D746B4287510000055DA7B /* CitiesPresenter.swift in Sources */,
 				F1D746A7287504360055DA7B /* APIError.swift in Sources */,
+				F14C5DAA28766D2B00C1BFB9 /* Extensions.swift in Sources */,
 				F14C5D9C28765A4700C1BFB9 /* CityDetailsPresenter.swift in Sources */,
 				F1D746B5287510000055DA7B /* CitiesWorker.swift in Sources */,
 				F1D746B7287510000055DA7B /* CitiesModels.swift in Sources */,

@@ -12,20 +12,18 @@
 
 import UIKit
 
-enum CityDetails
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+enum CityDetails {
+    enum LoadCityDetails {
+        struct Request{}
+        struct Response{
+            let name: String
+            let fullName: String
+            let population: Int
+        }
+        struct ViewModel{
+            let name: String
+            let fullName: String
+            let population: String
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }

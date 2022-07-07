@@ -13,15 +13,16 @@
 import UIKit
 
 protocol CityDetailsPresentationLogic {
-    func presentSomething(response: CityDetails.Something.Response)
+    func presentCityDetails(response: CityDetails.LoadCityDetails.Response)
 }
 
 class CityDetailsPresenter: CityDetailsPresentationLogic {
     weak var viewController: CityDetailsDisplayLogic?
-  
-  func presentSomething(response: CityDetails.Something.Response)
-  {
-    let viewModel = CityDetails.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    
+    func presentCityDetails(response: CityDetails.LoadCityDetails.Response) {
+        let population = response.population.formattedWithSeparator
+        
+        let viewModel = CityDetails.LoadCityDetails.ViewModel(name: response.name, fullName: response.fullName, population: population)
+        viewController?.displayCityDetails(viewModel: viewModel)
+    }
 }
