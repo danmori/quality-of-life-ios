@@ -9,13 +9,24 @@
 /* Begin PBXBuildFile section */
 		F1D74672287501CA0055DA7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74671287501CA0055DA7B /* AppDelegate.swift */; };
 		F1D74674287501CA0055DA7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74673287501CA0055DA7B /* SceneDelegate.swift */; };
-		F1D74676287501CA0055DA7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74675287501CA0055DA7B /* ViewController.swift */; };
-		F1D74679287501CA0055DA7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D74677287501CA0055DA7B /* Main.storyboard */; };
 		F1D7467B287501CC0055DA7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D7467A287501CC0055DA7B /* Assets.xcassets */; };
 		F1D7467E287501CC0055DA7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D7467C287501CC0055DA7B /* LaunchScreen.storyboard */; };
-		F1D74689287501CC0055DA7B /* Quality_Of_LifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74688287501CC0055DA7B /* Quality_Of_LifeTests.swift */; };
 		F1D74693287501CC0055DA7B /* Quality_Of_LifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74692287501CC0055DA7B /* Quality_Of_LifeUITests.swift */; };
 		F1D74695287501CC0055DA7B /* Quality_Of_LifeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D74694287501CC0055DA7B /* Quality_Of_LifeUITestsLaunchTests.swift */; };
+		F1D746A3287503F00055DA7B /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746A2287503F00055DA7B /* ServiceProvider.swift */; };
+		F1D746A7287504360055DA7B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746A6287504360055DA7B /* APIError.swift */; };
+		F1D746AA28750CC00055DA7B /* MostPopulatedCitiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746A928750CC00055DA7B /* MostPopulatedCitiesResponse.swift */; };
+		F1D746B4287510000055DA7B /* CitiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746AE287510000055DA7B /* CitiesPresenter.swift */; };
+		F1D746B5287510000055DA7B /* CitiesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746AF287510000055DA7B /* CitiesWorker.swift */; };
+		F1D746B6287510000055DA7B /* CitiesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746B0287510000055DA7B /* CitiesRouter.swift */; };
+		F1D746B7287510000055DA7B /* CitiesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746B1287510000055DA7B /* CitiesModels.swift */; };
+		F1D746B8287510000055DA7B /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746B2287510000055DA7B /* CitiesViewController.swift */; };
+		F1D746B9287510000055DA7B /* CitiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746B3287510000055DA7B /* CitiesInteractor.swift */; };
+		F1D746BB287510250055DA7B /* CitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D746BA287510250055DA7B /* CitiesView.swift */; };
+		F1F326C1287647AD00464152 /* CitiesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F326BD287647AD00464152 /* CitiesViewControllerTests.swift */; };
+		F1F326C2287647AD00464152 /* CitiesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F326BE287647AD00464152 /* CitiesInteractorTests.swift */; };
+		F1F326C4287647AD00464152 /* CitiesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F326C0287647AD00464152 /* CitiesPresenterTests.swift */; };
+		F1F326C728764DDC00464152 /* TestServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F326C628764DDC00464152 /* TestServiceAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,16 +50,27 @@
 		F1D7466E287501CA0055DA7B /* Quality Of Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quality Of Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D74671287501CA0055DA7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D74673287501CA0055DA7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F1D74675287501CA0055DA7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F1D74678287501CA0055DA7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1D7467A287501CC0055DA7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1D7467D287501CC0055DA7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1D7467F287501CC0055DA7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1D74684287501CC0055DA7B /* Quality Of LifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quality Of LifeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1D74688287501CC0055DA7B /* Quality_Of_LifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quality_Of_LifeTests.swift; sourceTree = "<group>"; };
 		F1D7468E287501CC0055DA7B /* Quality Of LifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quality Of LifeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D74692287501CC0055DA7B /* Quality_Of_LifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quality_Of_LifeUITests.swift; sourceTree = "<group>"; };
 		F1D74694287501CC0055DA7B /* Quality_Of_LifeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quality_Of_LifeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F1D746A2287503F00055DA7B /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		F1D746A6287504360055DA7B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F1D746A928750CC00055DA7B /* MostPopulatedCitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopulatedCitiesResponse.swift; sourceTree = "<group>"; };
+		F1D746AE287510000055DA7B /* CitiesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesPresenter.swift; sourceTree = "<group>"; };
+		F1D746AF287510000055DA7B /* CitiesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesWorker.swift; sourceTree = "<group>"; };
+		F1D746B0287510000055DA7B /* CitiesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesRouter.swift; sourceTree = "<group>"; };
+		F1D746B1287510000055DA7B /* CitiesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesModels.swift; sourceTree = "<group>"; };
+		F1D746B2287510000055DA7B /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
+		F1D746B3287510000055DA7B /* CitiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesInteractor.swift; sourceTree = "<group>"; };
+		F1D746BA287510250055DA7B /* CitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesView.swift; sourceTree = "<group>"; };
+		F1F326BD287647AD00464152 /* CitiesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewControllerTests.swift; sourceTree = "<group>"; };
+		F1F326BE287647AD00464152 /* CitiesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesInteractorTests.swift; sourceTree = "<group>"; };
+		F1F326C0287647AD00464152 /* CitiesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesPresenterTests.swift; sourceTree = "<group>"; };
+		F1F326C628764DDC00464152 /* TestServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestServiceAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +121,11 @@
 		F1D74670287501CA0055DA7B /* Quality Of Life */ = {
 			isa = PBXGroup;
 			children = (
+				F1D746A828750CAF0055DA7B /* Models */,
+				F1D746A1287503E00055DA7B /* Service */,
+				F1D746AD28750FE50055DA7B /* Features */,
 				F1D74671287501CA0055DA7B /* AppDelegate.swift */,
 				F1D74673287501CA0055DA7B /* SceneDelegate.swift */,
-				F1D74675287501CA0055DA7B /* ViewController.swift */,
-				F1D74677287501CA0055DA7B /* Main.storyboard */,
 				F1D7467A287501CC0055DA7B /* Assets.xcassets */,
 				F1D7467C287501CC0055DA7B /* LaunchScreen.storyboard */,
 				F1D7467F287501CC0055DA7B /* Info.plist */,
@@ -113,7 +136,8 @@
 		F1D74687287501CC0055DA7B /* Quality Of LifeTests */ = {
 			isa = PBXGroup;
 			children = (
-				F1D74688287501CC0055DA7B /* Quality_Of_LifeTests.swift */,
+				F1F326C628764DDC00464152 /* TestServiceAPI.swift */,
+				F1F326BC287647A100464152 /* Cities */,
 			);
 			path = "Quality Of LifeTests";
 			sourceTree = "<group>";
@@ -125,6 +149,63 @@
 				F1D74694287501CC0055DA7B /* Quality_Of_LifeUITestsLaunchTests.swift */,
 			);
 			path = "Quality Of LifeUITests";
+			sourceTree = "<group>";
+		};
+		F1D746A1287503E00055DA7B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F1D746A6287504360055DA7B /* APIError.swift */,
+				F1D746A2287503F00055DA7B /* ServiceProvider.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F1D746A828750CAF0055DA7B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1D746A928750CC00055DA7B /* MostPopulatedCitiesResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F1D746AC28750FC60055DA7B /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				F1D746AE287510000055DA7B /* CitiesPresenter.swift */,
+				F1D746AF287510000055DA7B /* CitiesWorker.swift */,
+				F1D746B0287510000055DA7B /* CitiesRouter.swift */,
+				F1D746B1287510000055DA7B /* CitiesModels.swift */,
+				F1D746B2287510000055DA7B /* CitiesViewController.swift */,
+				F1D746B3287510000055DA7B /* CitiesInteractor.swift */,
+				F1D746BA287510250055DA7B /* CitiesView.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		F1D746AD28750FE50055DA7B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				F1D746AC28750FC60055DA7B /* Cities */,
+				F1F326C5287648E200464152 /* City Details */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		F1F326BC287647A100464152 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				F1F326BD287647AD00464152 /* CitiesViewControllerTests.swift */,
+				F1F326BE287647AD00464152 /* CitiesInteractorTests.swift */,
+				F1F326C0287647AD00464152 /* CitiesPresenterTests.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		F1F326C5287648E200464152 /* City Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "City Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +314,6 @@
 			files = (
 				F1D7467E287501CC0055DA7B /* LaunchScreen.storyboard in Resources */,
 				F1D7467B287501CC0055DA7B /* Assets.xcassets in Resources */,
-				F1D74679287501CA0055DA7B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +338,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1D74676287501CA0055DA7B /* ViewController.swift in Sources */,
+				F1D746A3287503F00055DA7B /* ServiceProvider.swift in Sources */,
+				F1D746B9287510000055DA7B /* CitiesInteractor.swift in Sources */,
+				F1D746B8287510000055DA7B /* CitiesViewController.swift in Sources */,
 				F1D74672287501CA0055DA7B /* AppDelegate.swift in Sources */,
 				F1D74674287501CA0055DA7B /* SceneDelegate.swift in Sources */,
+				F1D746B4287510000055DA7B /* CitiesPresenter.swift in Sources */,
+				F1D746A7287504360055DA7B /* APIError.swift in Sources */,
+				F1D746B5287510000055DA7B /* CitiesWorker.swift in Sources */,
+				F1D746B7287510000055DA7B /* CitiesModels.swift in Sources */,
+				F1D746AA28750CC00055DA7B /* MostPopulatedCitiesResponse.swift in Sources */,
+				F1D746B6287510000055DA7B /* CitiesRouter.swift in Sources */,
+				F1D746BB287510250055DA7B /* CitiesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +357,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1D74689287501CC0055DA7B /* Quality_Of_LifeTests.swift in Sources */,
+				F1F326C1287647AD00464152 /* CitiesViewControllerTests.swift in Sources */,
+				F1F326C4287647AD00464152 /* CitiesPresenterTests.swift in Sources */,
+				F1F326C728764DDC00464152 /* TestServiceAPI.swift in Sources */,
+				F1F326C2287647AD00464152 /* CitiesInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +389,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F1D74677287501CA0055DA7B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1D74678287501CA0055DA7B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F1D7467C287501CC0055DA7B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +526,6 @@
 				INFOPLIST_FILE = "Quality Of Life/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +553,6 @@
 				INFOPLIST_FILE = "Quality Of Life/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
