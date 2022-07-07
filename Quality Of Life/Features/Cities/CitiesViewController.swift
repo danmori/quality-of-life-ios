@@ -14,6 +14,7 @@ import UIKit
 
 protocol CitiesDisplayLogic: AnyObject {
     func displayCities(viewModel: Cities.GetCities.ViewModel)
+    func displayCityDetails(viewModel: Cities.ShowCityDetails.ViewModel)
 }
 
 class CitiesViewController: UIViewController, CitiesDisplayLogic {
@@ -88,6 +89,15 @@ class CitiesViewController: UIViewController, CitiesDisplayLogic {
             self.contentView.tableView.reloadData()
         }
     }
+    
+    func showCityDetails(cityIndex: Int) {
+        let request = Cities.ShowCityDetails.Request(cityIndex: cityIndex)
+        interactor?.showCityDetails(request: request)
+    }
+    
+    func displayCityDetails(viewModel: Cities.ShowCityDetails.ViewModel) {
+        router?.routeToCityDetails()
+    }
 }
 
 extension CitiesViewController: UITableViewDelegate {
@@ -97,7 +107,7 @@ extension CitiesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(cities[indexPath.row].name)
+        showCityDetails(cityIndex: indexPath.row)
     }
 }
 

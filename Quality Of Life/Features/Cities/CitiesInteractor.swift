@@ -14,17 +14,20 @@ import UIKit
 
 protocol CitiesBusinessLogic {
     func getCities(request: Cities.GetCities.Request)
+    func showCityDetails(request: Cities.ShowCityDetails.Request)
 }
 
 protocol CitiesDataStore {
-    var cities: [CityItem] { get set }
+    var cities: [City] { get set }
+    var cityId: String { get set }
 }
 
 class CitiesInteractor: CitiesBusinessLogic, CitiesDataStore {
     var presenter: CitiesPresentationLogic?
     var worker: CitiesWorker?
-    var cities: [CityItem] = []
+    var cities: [City] = []
     var service: ServiceProvider?
+    var cityId: String = ""
     
     init(withServiceProvider service: ServiceProvider) {
         self.service = service
@@ -36,9 +39,15 @@ class CitiesInteractor: CitiesBusinessLogic, CitiesDataStore {
             case .failure(_):
                 print("falhou")
             case let .success(citiesResponse):
+                self.cities = citiesResponse.cities
                 let response = Cities.GetCities.Response(cities: citiesResponse.cities)
                 self.presenter?.presentCities(response: response)
             }
         }
+    }
+    
+    func showCityDetails(request: Cities.ShowCityDetails.Request) {
+        self.cityId = cities[request.cityIndex].geonameId
+        presenter?.presentCityDetails(response: Cities.ShowCityDetails.Response())
     }
 }

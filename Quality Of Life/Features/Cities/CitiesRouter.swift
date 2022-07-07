@@ -12,9 +12,8 @@
 
 import UIKit
 
-@objc protocol CitiesRoutingLogic
-{
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+@objc protocol CitiesRoutingLogic {
+    func routeToCityDetails()
 }
 
 protocol CitiesDataPassing
@@ -22,39 +21,22 @@ protocol CitiesDataPassing
   var dataStore: CitiesDataStore? { get }
 }
 
-class CitiesRouter: NSObject, CitiesRoutingLogic, CitiesDataPassing
-{
-  weak var viewController: CitiesViewController?
-  var dataStore: CitiesDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: CitiesViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: CitiesDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+class CitiesRouter: NSObject, CitiesRoutingLogic, CitiesDataPassing {
+    weak var viewController: CitiesViewController?
+    var dataStore: CitiesDataStore?
+    
+    func routeToCityDetails() {
+        let destinationVC = CityDetailsViewController()
+        var destionationDS = destinationVC.router!.dataStore!
+        passDataToCityDetails(source: dataStore!, destination: &destionationDS)
+        navigateToCityDetails(source: viewController!, destination: destinationVC)
+    }
+    
+    func passDataToCityDetails(source: CitiesDataStore, destination: inout CityDetailsDataStore) {
+        destination.cityId = source.cityId
+    }
+    
+    func navigateToCityDetails(source: CitiesViewController, destination: CityDetailsViewController) {
+        source.show(destination, sender: nil)
+    }
 }

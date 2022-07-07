@@ -13,18 +13,6 @@
 import UIKit
 
 enum Cities {
-  enum Something
-  {
-    struct Request
-    {
-    }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
     enum GetCities {
         struct Request {}
         struct Response {
@@ -33,5 +21,12 @@ enum Cities {
         struct ViewModel {
             let cities: [City]
         }
+    }
+    enum ShowCityDetails {
+        struct Request{
+            let cityIndex: Int
+        }
+        struct Response {}
+        struct ViewModel {}
     }
 }

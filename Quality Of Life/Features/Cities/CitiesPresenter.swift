@@ -14,6 +14,7 @@ import UIKit
 
 protocol CitiesPresentationLogic {
     func presentCities(response: Cities.GetCities.Response)
+    func presentCityDetails(response: Cities.ShowCityDetails.Response)
 }
 
 class CitiesPresenter: CitiesPresentationLogic {
@@ -21,5 +22,9 @@ class CitiesPresenter: CitiesPresentationLogic {
 
     func presentCities(response: Cities.GetCities.Response) {
         viewController?.displayCities(viewModel: Cities.GetCities.ViewModel(cities: response.cities))
+    }
+    
+    func presentCityDetails(response: Cities.ShowCityDetails.Response) {
+        viewController?.displayCityDetails(viewModel: Cities.ShowCityDetails.ViewModel())
     }
 }
